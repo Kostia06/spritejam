@@ -24,8 +24,8 @@ paymentRoutes.post('/checkout', authMiddleware(), async (c) => {
 
   if (body.planId) {
     const planPrices: Record<string, { amount: number; name: string }> = {
-      pro: { amount: 800, name: 'PixelMotion Pro' },
-      studio: { amount: 2000, name: 'PixelMotion Studio' },
+      pro: { amount: 800, name: 'Sprynt Pro' },
+      studio: { amount: 2000, name: 'Sprynt Studio' },
     };
 
     const plan = planPrices[body.planId];

@@ -73,7 +73,7 @@ export function Login() {
           <div class="text-center mb-8">
             <a href="/" class="inline-block mb-6">
               <span class="font-pixel text-2xl font-bold text-gradient">
-                PixelMotion
+                Sprynt
               </span>
             </a>
             <AnimatedText

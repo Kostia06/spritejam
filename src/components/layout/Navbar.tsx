@@ -43,7 +43,7 @@ export function Navbar() {
               </svg>
             </div>
             <span class="text-xl font-bold font-pixel text-gradient group-hover:text-shimmer transition-all">
-              PixelMotion
+              Sprynt
             </span>
           </a>
 

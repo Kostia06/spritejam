@@ -1,4 +1,4 @@
-name = "pixelmotion-api"
+name = "sprynt-api"
 main = "workers/api/index.ts"
 compatibility_date = "2024-12-01"
 
@@ -6,7 +6,7 @@ compatibility_date = "2024-12-01"
 APP_URL = "https://pixel-motion-isp.pages.dev"
 STRIPE_PUBLISHABLE_KEY = "pk_live_placeholder"
 JWT_SECRET = "dev-secret-change-in-production"
-CF_ACCESS_TEAM_DOMAIN = "pixelmotion.cloudflareaccess.com"
+CF_ACCESS_TEAM_DOMAIN = "sprynt.cloudflareaccess.com"
 
 [[d1_databases]]
 binding = "DB"
@@ -16,7 +16,7 @@ database_id = "7e516d4e-7013-4573-ac78-167f1bae3fa9"
 # Uncomment after enabling R2 in Cloudflare Dashboard
 # [[r2_buckets]]
 # binding = "R2"
-# bucket_name = "pixelmotion-assets"
+# bucket_name = "sprynt-assets"
 
 # Secrets (set via `wrangler secret put`):
 # GEMINI_API_KEY

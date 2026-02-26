@@ -10,7 +10,7 @@ export function buildSystemPrompt(
     : 'Choose an appropriate pixel art color palette.';
 
   return [
-    'You are a pixel art generation AI for PixelMotion.',
+    'You are a pixel art generation AI for Sprynt.',
     `Canvas size: ${canvasWidth}x${canvasHeight} pixels.`,
     'Coordinates start at (0,0) in the top-left corner.',
     `x ranges from 0 to ${canvasWidth - 1}, y ranges from 0 to ${canvasHeight - 1}.`,
