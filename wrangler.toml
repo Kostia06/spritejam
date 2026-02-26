@@ -3,7 +3,7 @@ main = "workers/api/index.ts"
 compatibility_date = "2024-12-01"
 
 [vars]
-APP_URL = "http://localhost:5173"
+APP_URL = "https://pixel-motion-isp.pages.dev"
 STRIPE_PUBLISHABLE_KEY = "pk_live_placeholder"
 JWT_SECRET = "dev-secret-change-in-production"
 CF_ACCESS_TEAM_DOMAIN = "pixelmotion.cloudflareaccess.com"
@@ -11,11 +11,12 @@ CF_ACCESS_TEAM_DOMAIN = "pixelmotion.cloudflareaccess.com"
 [[d1_databases]]
 binding = "DB"
 database_name = "pixelmotion"
-database_id = "placeholder"
+database_id = "7e516d4e-7013-4573-ac78-167f1bae3fa9"
 
-[[r2_buckets]]
-binding = "R2"
-bucket_name = "pixelmotion-assets"
+# Uncomment after enabling R2 in Cloudflare Dashboard
+# [[r2_buckets]]
+# binding = "R2"
+# bucket_name = "pixelmotion-assets"
 
 # Secrets (set via `wrangler secret put`):
 # GEMINI_API_KEY
