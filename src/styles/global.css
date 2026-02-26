@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+/* ============================================
+   TAILWIND v4 THEME (generates utility classes)
+   ============================================ */
+
+@theme {
+  --font-pixel: 'Pixelify Sans', 'Courier New', monospace;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-code: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ============================================
+   CSS VARIABLES (not affected by cascade layers)
+   ============================================ */
+
+:root {
+  --font-pixel: 'Pixelify Sans', 'Courier New', monospace;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-code: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --primary: #6C5CE7;
+  --primary-light: #A29BFE;
+  --primary-dark: #4834D4;
+  --secondary: #00CEC9;
+  --secondary-light: #81ECEC;
+  --accent: #FD79A8;
+  --accent-light: #FAB1D0;
+
+  --bg-0: #0D1117;
+  --bg-1: #161B22;
+  --bg-2: #21262D;
+  --bg-3: #30363D;
+  --border: #30363D;
+  --border-light: #484F58;
+  --text-0: #E6EDF3;
+  --text-1: #8B949E;
+  --text-2: #484F58;
+
+  --success: #2EA043;
+  --warning: #D29922;
+  --error: #F85149;
+  --info: #58A6FF;
+
+  --canvas-bg: #1A1A2E;
+  --canvas-grid: #2A2A4A;
+  --canvas-checker-a: #2A2A2A;
+  --canvas-checker-b: #3A3A3A;
+}
+
+/* ============================================
+   BASE RESET — inside @layer base so Tailwind
+   utilities can override margin/padding/border
+   ============================================ */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--bg-0);
+    color: var(--text-0);
+    overscroll-behavior: none;
+  }
+
+  canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================
+   KEYFRAMES (outside layers is fine — they don't
+   compete with utility specificity)
+   ============================================ */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pixel-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+  50% { transform: translateY(-30px) rotate(180deg); opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes text-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes pixel-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes overlay-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-scale-in {
+  from { opacity: 0; transform: scale(0.92) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes shimmer-sweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes hero-pixel-draw {
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ============================================
+   CUSTOM UTILITIES — inside @layer utilities
+   so they sit at the same level as Tailwind utilities
+   ============================================ */
+
+@layer utilities {
+  /* Glassmorphism */
+  .glass {
+    background: rgba(22, 27, 34, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(48, 54, 61, 0.5);
+  }
+
+  .glass-strong {
+    background: rgba(22, 27, 34, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(48, 54, 61, 0.6);
+  }
+
+  /* Gradient borders */
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .gradient-border-animated::before {
+    background-size: 300% 300%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  /* Glow effects */
+  .glow-primary { box-shadow: 0 0 20px rgba(108, 92, 231, 0.3); }
+  .glow-accent { box-shadow: 0 0 20px rgba(253, 121, 168, 0.3); }
+  .glow-secondary { box-shadow: 0 0 20px rgba(0, 206, 201, 0.3); }
+
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-shimmer {
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 25%, var(--secondary) 50%, var(--accent) 75%, var(--primary) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-shimmer 4s linear infinite;
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .reveal.visible,
+  .reveal-left.visible,
+  .reveal-right.visible,
+  .reveal-scale.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .stagger-1 { transition-delay: 100ms; }
+  .stagger-2 { transition-delay: 200ms; }
+  .stagger-3 { transition-delay: 300ms; }
+  .stagger-4 { transition-delay: 400ms; }
+  .stagger-5 { transition-delay: 500ms; }
+
+  /* Decorative */
+  .bg-dot-grid {
+    background-image: radial-gradient(circle, rgba(108, 92, 231, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .scanlines {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.08) 2px, rgba(0, 0, 0, 0.08) 4px);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .scanlines:hover::after { opacity: 1; }
+
+  .card-3d {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+  }
+
+  .card-3d:hover {
+    transform: rotateX(-2deg) rotateY(3deg) translateY(-4px);
+  }
+
+  /* Page entrance */
+  .page-enter { animation: fade-up 0.4s ease-out both; }
+
+  /* Shimmer loading */
+  .shimmer {
+    background: linear-gradient(90deg, var(--bg-1) 0%, var(--bg-2) 50%, var(--bg-1) 100%);
+    background-size: 200% 100%;
+    animation: shimmer-sweep 1.5s linear infinite;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
+}

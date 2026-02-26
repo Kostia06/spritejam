@@ -1,0 +1,15 @@
+name = "pixelmotion-api"
+main = "api/index.ts"
+compatibility_date = "2024-12-01"
+
+[vars]
+APP_URL = "https://pixelmotion.app"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pixelmotion"
+database_id = "placeholder"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "pixelmotion-assets"
