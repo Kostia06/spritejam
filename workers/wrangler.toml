@@ -1,16 +1,16 @@
-name = "sprynt-api"
+name = "spritejam-api"
 main = "api/index.ts"
 compatibility_date = "2024-12-01"
 
 [vars]
-APP_URL = "https://sprynt.app"
+APP_URL = "https://spritejam.app"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "sprynt"
+database_name = "spritejam"
 database_id = "7e516d4e-7013-4573-ac78-167f1bae3fa9"
 
 # Uncomment after enabling R2
 # [[r2_buckets]]
 # binding = "R2"
-# bucket_name = "sprynt-assets"
+# bucket_name = "spritejam-assets"

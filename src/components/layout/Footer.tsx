@@ -58,7 +58,7 @@ export function Footer() {
                 </svg>
               </div>
               <span class="text-lg font-bold font-pixel text-gradient">
-                Sprynt
+                SpriteJam
               </span>
             </div>
             <p class="text-sm text-[var(--text-1)] font-body leading-relaxed max-w-xs">
@@ -99,7 +99,7 @@ export function Footer() {
 
         <div class="border-t border-[var(--border)]/30 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p class="text-xs text-[var(--text-2)] font-body">
-            &copy; {new Date().getFullYear()} Sprynt. All rights reserved.
+            &copy; {new Date().getFullYear()} SpriteJam. All rights reserved.
           </p>
           <div class="flex items-center gap-3">
             {['Discord', 'Twitter', 'GitHub'].map((name) => (

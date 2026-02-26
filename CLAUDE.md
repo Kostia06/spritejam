@@ -1,13 +1,13 @@
-# CLAUDE.md — Sprynt
+# CLAUDE.md — SpriteJam
 
 > AI-Powered Pixel Art Animation Studio
 > Built with Preact + Vite + Cloudflare
 
 ---
 
-## 1. What Is Sprynt?
+## 1. What Is SpriteJam?
 
-Sprynt is a browser-based pixel art animation studio where users draw sprites, animate them frame-by-frame, and use AI to generate sprites, interpolate animation frames, suggest palettes, and auto-complete drawings.
+SpriteJam is a browser-based pixel art animation studio where users draw sprites, animate them frame-by-frame, and use AI to generate sprites, interpolate animation frames, suggest palettes, and auto-complete drawings.
 
 **The AI twist:** Google Gemini outputs structured JSON (pixel coordinates + hex colors), NOT images. The frontend renders these deterministically onto the HTML5 Canvas. This means full editability, consistency, and low cost.
 
@@ -42,7 +42,7 @@ Sprynt is a browser-based pixel art animation studio where users draw sprites, a
 
 ### CRITICAL: Pixel Font Is Core to the Brand
 
-Sprynt uses **Pixelify Sans** from Google Fonts as its signature display font. Every heading, button, nav item, and label uses this font. Body text uses **Inter**.
+SpriteJam uses **Pixelify Sans** from Google Fonts as its signature display font. Every heading, button, nav item, and label uses this font. Body text uses **Inter**.
 
 ### Loading Fonts
 
@@ -86,7 +86,7 @@ export default {
 
 | Element | Font Class | Weight |
 |---------|-----------|--------|
-| Logo "SPRYNT" | `font-pixel` | 700 (bold) |
+| Logo "SPRITEJAM" | `font-pixel` | 700 (bold) |
 | Page headings (h1, h2) | `font-pixel` | 600 (semibold) |
 | Subheadings (h3, h4) | `font-pixel` | 500 (medium) |
 | Navigation links | `font-pixel` | 500 |
@@ -163,7 +163,7 @@ export default {
 ## 5. Project Structure
 
 ```
-sprynt/
+spritejam/
 ├── CLAUDE.md
 ├── index.html
 ├── vite.config.ts
